@@ -44,5 +44,9 @@
 
 4. Run `python main.py`
 
-### Run App Engine
+### Compute Engine
+
+### Configuration
+
+        bq load --source_format="NEWLINE_DELIMITED_JSON" knowledge-prototype:rtda.cytonData [PATH_TO_DATA_FILE] [PATH_TO_SCHEMA_FILE]
 

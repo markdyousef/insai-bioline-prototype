@@ -1,0 +1,138 @@
+[
+    {
+        "name": "accelData",
+        "type": "RECORD",
+        "mode": "REPEATED",
+        "fields": [
+            {
+                "name": "ac0",
+                "type": "INTEGER",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "ac1",
+                "type": "INTEGER",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "ac2",
+                "type": "INTEGER",
+                "mode": "NULLABLE"
+            }
+        ]
+    },
+    {
+        "name": "channelData",
+        "type": "RECORD",
+        "mode": "REPEATED",
+        "fields": [
+            {
+                "name": "ch0",
+                "type": "FLOAT",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "ch1",
+                "type": "FLOAT",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "ch2",
+                "type": "FLOAT",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "ch3",
+                "type": "FLOAT",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "ch4",
+                "type": "FLOAT",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "ch5",
+                "type": "FLOAT",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "ch6",
+                "type": "FLOAT",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "ch7",
+                "type": "FLOAT",
+                "mode": "NULLABLE"
+            }
+        ]
+    },
+    {
+        "name": "auxData",
+        "type": "RECORD",
+        "mode": "REPEATED",
+        "fields": [
+            {
+                "name": "ax0",
+                "type": "INTEGER",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "ax1",
+                "type": "INTEGER",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "ax2",
+                "type": "INTEGER",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "ax3",
+                "type": "INTEGER",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "ax4",
+                "type": "INTEGER",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "ax5",
+                "type": "INTEGER",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "ax6",
+                "type": "INTEGER",
+                "mode": "NULLABLE"
+            }
+        ]
+    },
+    {
+        "name": "sampleNumber",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "startByte",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "valid",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "timestamp",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "boardTime",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    }
+]
