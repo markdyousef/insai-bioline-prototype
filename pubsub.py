@@ -1,3 +1,6 @@
+from google.cloud import pubsub_v1
+import os
+
 PROJECT_ID = os.getenv('PROJECT_ID')
 TOPIC = os.getenv('PUBSUB_TOPIC')
 SUBSCRIPTION = os.getenv('PUBSUB_SUBSCRIPTION')
