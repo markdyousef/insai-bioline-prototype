@@ -5,7 +5,7 @@ import json
 DATASET_ID = os.getenv('BIGQUERY_DATASET_ID')
 TABLE_ID = os.getenv('BIGQUERY_TABLE_ID')
 AC_COUNT = 3 # accel data
-CH_COUNT = 8 # channel data
+CH_COUNT = 16 # channel data
 AX_COUNT = 6 # aux data
 
 def get_schema():
@@ -54,14 +54,14 @@ def get_table(client, dataset_id=DATASET_ID, table_id=TABLE_ID):
 
 def format_data(data):
     # message data is bytes
-    accel_data = data['accelData']
-    channel_data = data['channelData']
-    aux_data = data['auxData']['data']
-    sample_number = data['sampleNumber']
-    start_byte = data['startByte']
-    valid = data['valid']
-    timestamp = data['timestamp']
-    board_time = data['boardTime']
+    accel_data = data['accelData'] if 'accelData' in data else []
+    channel_data = data['channelData'] if 'channelData' in data else []
+    aux_data = data['auxData']['data'] if 'auxData' in data else []
+    sample_number = data['sampleNumber'] if 'sampleNumber' in data else -1
+    start_byte = data['startByte'] if 'startByte' in data else -1
+    valid = data['valid'] if 'valid' in data else False
+    timestamp = data['timestamp'] if 'timestamp' in data else -1
+    board_time = data['boardTime'] if 'boardTime' in data else -1
     
     # format data in accordance to schema
     accel_data = [{'ac{}'.format(i): val} for i, val in enumerate(accel_data)]
@@ -78,6 +78,7 @@ def format_data(data):
         "timestamp": timestamp,
         "boardTime": board_time
     }
+    print('DATA_FORMAT:', row)
     return row
 
 def stream_data_bigquery(client, table, data_stream):
@@ -86,6 +87,7 @@ def stream_data_bigquery(client, table, data_stream):
         data = json.loads(message.data.decode())
         row = format_data(data)
         errors = client.insert_rows(table, [row])
+        print(errors)
         assert errors == []
         return errors
     
@@ -102,6 +104,5 @@ def stream_data_bigquery(client, table, data_stream):
     try:
         future.result()
     except Exception as e:
-        future.close()
-        raise
-
+        #future.close()
+        print(e)

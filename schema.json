@@ -65,6 +65,46 @@
                 "name": "ch7",
                 "type": "FLOAT",
                 "mode": "NULLABLE"
+            },
+            {
+                "name": "ch8",
+                "type": "FLOAT",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "ch9",
+                "type": "FLOAT",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "ch10",
+                "type": "FLOAT",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "ch11",
+                "type": "FLOAT",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "ch12",
+                "type": "FLOAT",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "ch13",
+                "type": "FLOAT",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "ch14",
+                "type": "FLOAT",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "ch15",
+                "type": "FLOAT",
+                "mode": "NULLABLE"
             }
         ]
     },
